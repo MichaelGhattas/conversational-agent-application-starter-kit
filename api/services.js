@@ -26,23 +26,23 @@ var classifierFile = __dirname + '/../training/classifier_id';
 // This application requires 3 ids to work properly
 
 // 1. TMDB API key, explained in https://www.themoviedb.org/documentation/api
-var TMDB_API_KEY = process.env.TMDB_API_KEY || '';
+var TMDB_API_KEY = process.env.TMDB_API_KEY || '34a9c7a0879608261f128d218bcc1695';
 
 // 2. dialog id - see training/setup.js
-var DIALOG_ID = 'TYPE DIALOG ID HERE';
+var DIALOG_ID = 'a32e9c40-caf6-4841-8d00-0993bf8bcc73';
 if (fs.existsSync(dialogFile))
   DIALOG_ID = trim(fs.readFileSync(dialogFile, 'utf8'));
 
 // 3. classifier id - see training/setup.js
-var CLASSIFIER_ID = 'TYPE CLASSIFIER ID HERE';
+var CLASSIFIER_ID = '9a8879x44-nlc-462';
 if (fs.existsSync(classifierFile))
   CLASSIFIER_ID = trim(fs.readFileSync(classifierFile, 'utf8'));
 
 
 module.exports = {
   dialog : watson.dialog({
-    username: '<username>',
-    password: '<password>',
+    username: 'a0144c25-072e-4402-b960-dd603b18ca56',
+    password: '3YPPPEKbmKNE',
     version: 'v1',
     path: { dialog_id: DIALOG_ID }
   }),
@@ -52,8 +52,8 @@ module.exports = {
   movieDB: require(TMDB_API_KEY ? './moviedb' : './moviedb-mock')(TMDB_API_KEY),
 
   classifier: watson.natural_language_classifier({
-    username: '<username>',
-    password: '<password>',
+    username: 'b62805c9-dba7-4cfa-986d-b7c83b542c4a',
+    password: 'KnaaX55lLY2l',
     version: 'v1',
     path: { classifier_id: CLASSIFIER_ID }
   }),
